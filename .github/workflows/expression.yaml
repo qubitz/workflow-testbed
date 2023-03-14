@@ -1,0 +1,14 @@
+name: Play around with expressions
+
+on:
+  workflow_call:
+    inputs:
+      value:
+        required: true
+        type: boolean
+
+jobs:
+  expression:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{ inputs.value }}
