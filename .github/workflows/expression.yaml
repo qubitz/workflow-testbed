@@ -6,9 +6,10 @@ on:
       value:
         required: true
         type: boolean
+        default: false
 
 jobs:
   expression:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ fromJSON('["first", "second"]')[inputs.IncludeChangeLog] }}
+    - run: echo ${{ fromJSON('["first", "second"]')[2] }}
