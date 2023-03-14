@@ -21,6 +21,6 @@ jobs:
         } Else {
           $var = "1"
         }
-        echo $var
+        write-output $var
       shell: powershell
     - run: echo ${{ steps.var.outputs.result }}
