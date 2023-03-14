@@ -15,6 +15,8 @@ jobs:
     - id: var
       if: inputs.value
       run: echo "result=hello" >> GITHUB_OUTPUT
-    - run: Write-Output $(If (${{ inputs.value }}) {"0"} Else {"1"})
+    - run: |
+        $var = If (${{ inputs.value }}) {"0"} Else {"1"})
+        echo $var 
       shell: powershell
     - run: echo ${{ steps.var.outputs.result }}
