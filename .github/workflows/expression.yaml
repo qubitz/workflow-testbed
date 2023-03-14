@@ -12,4 +12,4 @@ jobs:
   expression:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ fromJSON('["first", "second"]')[2] }}
+    - run: echo ${{ fromJSON('["first", "second"]')[1] }}
