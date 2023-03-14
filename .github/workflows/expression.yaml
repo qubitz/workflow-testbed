@@ -15,7 +15,6 @@ jobs:
     - id: var
       if: inputs.value
       run: echo "result=hello" >> GITHUB_OUTPUT
-    - run: |
-        write-output $var
+    - run: write-output $var
       shell: powershell
     - run: echo ${{ steps.var.outputs.result }}
