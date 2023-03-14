@@ -5,6 +5,6 @@ on:
 
 jobs:
   call-workflow:
-    uses: ./.github/workflows/expressions.yaml@main
+    uses: ./expressions.yaml
     with:
       value: true
