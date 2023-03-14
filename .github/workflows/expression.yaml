@@ -11,4 +11,4 @@ jobs:
   expression:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ inputs.value }}
+    - run: echo ${{ fromJSON('[0, 1]')[inputs.IncludeChangeLog] }}
