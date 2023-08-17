@@ -11,14 +11,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "value" >> $GITHUB_OUTPUT
+      - run: echo "value=test" >> $GITHUB_OUTPUT
         if: inputs.skip
         id: sut
       - run: |
           echo "we ran"
           echo value was ${{ steps.sut.outputs.value }}
-        if: steps.sut.outputs.value == 'value'
+        if: steps.sut.outputs.value == 'test'
       - run: |
           echo "we didnt ran"
           echo value was ${{ steps.sut.outputs.value }}
-        if: steps.sut.outputs.value != 'value'
+        if: steps.sut.outputs.value != 'test'
