@@ -1,0 +1,24 @@
+name: Output from a cond step
+
+on:
+  workflow_dispatch:
+    inputs:
+      skip:
+        type: boolean
+        required: true
+
+jobs:
+  test:
+    uses: ubuntu-latest
+    steps:
+      - run: echo "value" >> $GITHUB_OUTPUT
+        if: skip
+        id: sut
+      - run: |
+          echo "we ran"
+          echo value was ${{ steps.sut.outputs.value }}
+        if: steps.sut.outputs.value == 'value'
+      - run: |
+          echo "we didnt ran"
+          echo value was ${{ steps.sut.outputs.value }}
+        if: steps.sut.outputs.value != 'value'
