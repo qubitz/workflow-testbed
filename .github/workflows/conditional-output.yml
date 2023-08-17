@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    uses: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "value" >> $GITHUB_OUTPUT
         if: skip
