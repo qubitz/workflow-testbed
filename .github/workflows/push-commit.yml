@@ -9,8 +9,6 @@ jobs:
         with:
           token: ${{ github.token }}
       - name: Create changelog for overmind
-        if: inputs.DeployToCoreStudio == true
-        working-directory: ${{ runner.temp }}/Development/
         shell: powershell
         run: |
           If (!(git tag -l "latest")) {
