@@ -12,6 +12,6 @@ jobs:
         shell: powershell
         run: |
           If (!(git tag -l "latest")) {
-          git tag latest
-          git push origin latest
+            git tag latest
+            git push origin latest
           }
